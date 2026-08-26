@@ -125,16 +125,274 @@ Hypothesis Testing
 Business Findings
     ↓
 Business Recommendations
-
+```
 ## Tools & Technologies
-Tool	Purpose
-Python	Data cleaning, EDA, and statistical analysis
-Pandas	Data manipulation
-NumPy	Numerical analysis
-SciPy	Statistical testing
-Statsmodels	ANOVA and post-hoc analysis
-Matplotlib	Statistical visualizations
-Seaborn	Exploratory visualizations
-SQL	Business queries and aggregations
-Power BI	Interactive dashboards and reporting
-GitHub	Version control and project presentation
+Tool	        Purpose
+Python	        Data cleaning, EDA, and statistical analysis
+Pandas	        Data manipulation
+NumPy	        Numerical analysis
+SciPy	        Statistical testing
+Statsmodels 	ANOVA and post-hoc analysis
+Matplotlib	    Statistical visualizations
+Seaborn	        Exploratory visualizations
+SQL	            Business queries and aggregations
+Power BI	    Interactive dashboards and reporting
+GitHub	        Version control and project presentation
+
+## Statistical Methods Used
+### Method	                  Purpose
+Descriptive Statistics	   Understand distributions and central tendency
+IQR Outlier Detection	   Identify unusual observations
+Pearson Correlation	       Measure linear association
+Spearman Correlation	   Measure monotonic association
+One-Way ANOVA	           Test differences across discount groups
+Welch's ANOVA	           Robust test when equal variance is questionable
+Tukey HSD	               Identify specific group differences
+Kruskal-Wallis	           Non-parametric validation
+Eta Squared	               Measure effect size
+
+## Key Statistical Results
+### Analysis	                    Result
+Pearson Correlation                	-0.8464
+Pearson P-value	                    < 0.001
+Welch's ANOVA Statistic            	11,077.2888
+Welch's ANOVA P-value	            < 0.001
+Eta Squared	                        0.7517
+Loss-Making Transactions	        12,544
+Loss-Making Rate	                24.46%
+High-Discount Loss Transactions	    9,579
+Share of Loss-Making Transactions	76.36%
+
+These results indicate a strong negative association between discount and profit margin and statistically significant differences in profitability across discount bands.
+
+## Power BI Dashboard
+
+### Main Dashboard
+<img width="1136" height="650" alt="image" src="https://github.com/user-attachments/assets/fb0f7dbd-33e5-442a-8e7a-e298b52a69fe" />
+
+The Power BI solution converts the analytical results into interactive business dashboards.
+
+### Geographic Analysis
+
+- Profit by Country
+- Sales by Country
+- Profit Leakage Countries
+
+### Customer Analysis
+
+- Top 10 Customers by Sales
+
+### Product Analysis
+
+- Top 10 Products by Sales
+- Highest Profit Leakage Products
+
+### Market Analysis
+
+- Profit by Market
+- Sales by Market
+
+### Discount Analysis
+
+- Profit Margin by Discount Band
+
+### Operations
+
+- Shipping Mode Distribution
+- Orders by Priority
+
+---
+
+## Dashboard Purpose
+
+The dashboard is designed to help business users answer:
+
+- Where are we making money?
+- Where are we losing money?
+- Which products are causing leakage?
+- Which customers generate high sales?
+- Which markets perform best?
+- Are discounts associated with lower profitability?
+- Where should management investigate?
+
+The Python statistical analysis provides analytical validation, while Power BI provides interactive decision support.
+
+---
+
+## Key Business Findings
+
+### 1. Discount & Profitability
+
+A strong negative relationship exists between discount and profit margin.
+
+**Pearson correlation = -0.8464**
+
+The relationship is statistically significant at **p < 0.001**.
+
+---
+
+### 2. Profitability Across Discount Bands
+
+Welch's ANOVA confirms statistically significant differences in profit margins across discount bands.
+
+**p < 0.001**
+
+---
+
+### 3. Large Effect Size
+
+The effect size is:
+
+**η² = 0.7517**
+
+This indicates a very large association between discount-band grouping and observed profit-margin differences.
+
+---
+
+### 4. Loss-Making Transactions
+
+- **12,544 loss-making transactions**
+- **24.46% of total transactions**
+
+---
+
+### 5. High-Discount Losses
+
+- **9,579 high-discount loss transactions**
+- **76.36% of all loss-making transactions**
+
+---
+
+### 6. Extreme Discounting
+
+The **Above 50% discount band** has the lowest observed average profit margin:
+
+**-115.0090**
+
+---
+
+## Business Recommendations
+
+### 1. Review High Discounting
+
+Review high-discount transactions before approving similar promotions, as higher discounts are strongly associated with lower profit margins.
+
+### 2. Control Extreme Discounts
+
+Transactions with discounts above 50% should receive additional review because this discount band has the lowest average profit margin.
+
+### 3. Investigate Loss-Making Transactions
+
+Investigate loss-making transactions to identify recurring product, customer, market, or discount-related patterns.
+
+### 4. Prioritize High-Discount Losses
+
+Prioritize loss-making transactions with discounts above 30% for profit-leakage investigation.
+
+### 5. Evaluate Promotions Using Profitability
+
+Promotional performance should be evaluated using profit and profit margin rather than relying only on sales or revenue growth.
+
+### 6. Establish Discount Controls
+
+Statistical evidence can support discount thresholds, approval rules, and ongoing monitoring of promotion profitability.
+
+---
+
+## Important Statistical Interpretation
+
+The analysis identifies **statistical associations and significant differences**.
+
+It does not establish that discounting alone causes every observed change in profit margin.
+
+Other business factors can also affect profitability, including:
+
+- Product characteristics
+- Cost structure
+- Shipping cost
+- Market
+- Customer
+- Quantity
+- Pricing
+- Operational factors
+
+Therefore, the results should be used to identify areas for investigation and decision support rather than interpreted as a standalone causal model.
+
+---
+
+## Project Structure
+
+```text
+retail-profit-leakage-analysis/
+│
+├── Data/
+│   ├── Processed/
+│   └── External/
+│
+├── Python/
+│   ├── 01_Data_Cleaning.py
+│   ├── 02_EDA.py
+│   ├── 03_Feature_Engineering.py
+│   ├── 04_Final_Data_Integration.py
+│   └── 05_Statistical_Analysis.ipynb
+│
+├── SQL/
+│   └── SQL_Analysis.sql
+│
+├── PowerBI/
+│   └── Retail_Profit_Leakage_Dashboard.pbix
+│
+├── Dashboard_Screenshots/
+│
+├── README.md
+└── LICENSE
+```
+## Future Improvements
+
+Potential future development includes:
+
+- Predictive profit-risk scoring
+- Automated profit-leakage alerts
+- Customer profitability segmentation
+- Product-level risk scoring
+- Promotion effectiveness analysis
+- Time-series forecasting
+- Machine-learning-based loss prediction
+- Automated reporting
+- Scenario analysis for discount decisions
+
+These extensions could turn the analytical framework into a more automated profitability monitoring system.
+
+---
+
+## Conclusion
+
+This project demonstrates how retail transaction data can be transformed into actionable profitability intelligence.
+
+The analysis identifies a strong negative association between discounting and profit margin, statistically significant differences in profitability across discount bands, and a substantial concentration of loss-making transactions among high-discount orders.
+
+The final solution combines:
+
+**Python + SQL + Statistics + Power BI**
+
+to move from:
+
+**Raw Data → Analysis → Statistical Validation → Visualization → Business Decision**
+
+---
+
+## Author
+
+**Sharvari Muley**
+
+Data Analytics | Business Intelligence | Python | SQL | Power BI | Statistics
+
+---
+
+## Copyright & Usage
+
+© 2026 Sharvari Muley. All rights reserved.
+
+This project is published for portfolio, educational, and evaluation purposes.
+
+No permission is granted to copy, reproduce, modify, redistribute, or present this project or substantial portions of its code, analysis, documentation, or visualizations as another person's work without prior written permission.
