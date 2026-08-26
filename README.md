@@ -126,18 +126,4 @@ Business Findings
     ↓
 Business Recommendations
 
-## Tools & Technologies
 
-| Tool / Technology | Purpose |
-|---|---|
-| Python | Data cleaning, exploratory data analysis, feature engineering, and statistical analysis |
-| Pandas | Data manipulation, transformation, and analysis |
-| NumPy | Numerical and statistical calculations |
-| SciPy | Statistical tests and hypothesis testing |
-| Statsmodels | ANOVA, Welch's ANOVA, and post-hoc statistical analysis |
-| Matplotlib | Statistical and analytical visualizations |
-| Seaborn | Exploratory data visualizations |
-| SQL | Business queries, filtering, aggregation, ranking, and profitability analysis |
-| Power BI | Interactive dashboards, KPI reporting, and business intelligence |
-| Jupyter Notebook | Statistical analysis and analytical workflow |
-| GitHub | Version control and project portfolio presentation |
