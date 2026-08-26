@@ -126,4 +126,15 @@ Business Findings
     ↓
 Business Recommendations
 
-
+## Tools & Technologies
+Tool	Purpose
+Python	Data cleaning, EDA, and statistical analysis
+Pandas	Data manipulation
+NumPy	Numerical analysis
+SciPy	Statistical testing
+Statsmodels	ANOVA and post-hoc analysis
+Matplotlib	Statistical visualizations
+Seaborn	Exploratory visualizations
+SQL	Business queries and aggregations
+Power BI	Interactive dashboards and reporting
+GitHub	Version control and project presentation
