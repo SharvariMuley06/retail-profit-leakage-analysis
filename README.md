@@ -59,28 +59,72 @@ Power BI dashboards and business recommendations.
 
 ## Dataset
 
-The final analytical dataset contains:
+This project uses the **Global Retail dataset** as the primary retail transaction dataset and two external World Bank datasets for economic enrichment.
 
-- **51,290 records**
-- **49 columns**
+### 1. Global Retail Dataset
 
-The dataset contains information related to:
+The **Global Retail dataset** is the primary dataset used for the project.
 
+It contains retail transaction-level information covering:
+
+- Orders
+- Customers
+- Products
+- Categories
+- Sub-Categories
 - Sales
 - Profit
 - Discount
 - Quantity
-- Customers
-- Products
-- Categories
 - Markets
 - Countries
+- Regions
 - Shipping
-- Delivery
-- Profit Margin
-- Discount Bands
-- Loss Status
-- Economic indicators
+- Order Priority
+- Order Dates
+- Delivery Information
+
+  The final analytical dataset contains:
+
+- **51,290 records**
+- **49 columns**
+
+The Global Retail dataset forms the foundation of the analysis and is used for sales, profitability, customer, product, market, discount, and operational analysis.
+
+### 2. World Bank GDP Growth Dataset
+
+GDP growth data was used as an external economic enrichment dataset.
+
+It provides additional economic context for the countries and time periods represented in the Global Retail data.
+
+The integrated feature is:
+
+- `gdp_growth`
+
+### 3. World Bank Inflation Dataset
+
+Inflation data was used as a second external economic enrichment dataset.
+
+It provides additional economic context for the retail transactions by incorporating inflation conditions across relevant countries and time periods.
+
+The integrated feature is:
+
+- `inflation_rate`
+
+### Data Enrichment & Integration
+
+The three datasets were cleaned, transformed, and integrated using relevant **geographic and time dimensions**.
+
+```text
+Global Retail Dataset
+        +
+World Bank GDP Growth
+        +
+World Bank Inflation
+        ↓
+Enriched Global Retail Analytical Dataset
+```
+The enrichment adds external economic context to the original Global Retail transaction data, allowing the project to move beyond basic sales reporting toward broader business, profitability, and economic performance analysis.
 
 ### Additional Analytical Features
 
@@ -100,6 +144,8 @@ Additional analytical features were created during the project, including:
 - `profit_status`
 - `delivery_status`
 - `profit_per_unit`
+- `gdp_growth`
+- `inflation_rate`
 
 ---
 
