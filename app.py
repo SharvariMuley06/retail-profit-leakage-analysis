@@ -94,5 +94,3 @@ st.markdown(
 @st.cache_data
 def read_csv(path: str) -> pd.DataFrame:
     return pd.read_csv(path)
-
-
