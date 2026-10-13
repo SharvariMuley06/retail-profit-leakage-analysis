@@ -1,0 +1,7 @@
+investigation_category,flagged_records,total_negative_profit,total_sales,total_profit
+Negative profit,544,331997.14,695922.0,-331997.14
+High discount,420,294884.91,443913.0,-292520.53
+High shipping cost,312,42430.99,434809.0,39698.98
+Negative profit and high discount,409,294884.91,419611.0,-294884.91
+Negative profit and high shipping cost,103,42430.99,105640.0,-42430.99
+"Negative profit, high discount and high shipping cost",73,38493.92,56731.0,-38493.92

@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.ipynb_checkpoints/
+.virtual_documents/
+
+# Python and test caches
+__pycache__/
+.pytest_cache/
+*.py[cod]
+
+# Local environments and IDE files
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.vscode/
+
+# Temporary notebook and generated files
+.virtual_documents/
+.ipynb_checkpoints/
+
+# Local Anaconda project metadata
+anaconda_projects/
