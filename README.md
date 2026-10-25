@@ -6,12 +6,16 @@ Retail businesses can generate strong sales while still losing profitability thr
 
 This project analyzes retail sales and profitability data to identify **profit leakage patterns, quantify their statistical significance, and translate the findings into actionable business recommendations**.
 
-The project combines:
+A retail analytics project that combines business performance analysis, machine learning-based anomaly detection, and interactive dashboards to identify potential profit leakage.
 
-- Python for data analysis and statistical validation
-- SQL for business-oriented data analysis
-- Power BI for interactive dashboards and decision support
-- Statistical hypothesis testing to validate relationships and differences in profitability
+## Features
+
+- **Retail Analytics:** Analyze sales, profit, discounts, categories, regions, and monthly trends.
+- **Anomaly Detection:** Use Isolation Forest to identify unusual retail transactions.
+- **Profit Leakage Investigation:** Flag negative-profit transactions, high discounts, and high shipping costs.
+- **Interactive Dashboard:** Explore KPIs, charts, and flagged transactions using Streamlit.
+- **FastAPI Backend:** Provide analytics through REST API endpoints.
+- **Retail Analytics Assistant:** Ask supported questions about business metrics, regional performance, anomalies, and individual orders.
 
 ---
 
@@ -30,31 +34,6 @@ Key business questions include:
 - How does discounting affect profit margin?
 - Are differences in profitability across discount levels statistically significant?
 - Which discount levels require greater business attention?
-
----
-
-## What Makes This Project Different
-
-This project is not limited to creating a Power BI dashboard.
-
-It combines four analytical layers:
-
-### Layer 1 — Data
-
-Cleaning, integration, and feature engineering.
-
-### Layer 2 — Business Analytics
-
-SQL-based analysis of customers, products, markets, and profitability.
-
-### Layer 3 — Statistical Validation
-
-Correlation, hypothesis testing, ANOVA, Welch's ANOVA, Tukey HSD, Kruskal-Wallis, and effect-size analysis.
-
-### Layer 4 — Decision Support
-
-Power BI dashboards and business recommendations.
-
 ---
 
 ## Dataset
@@ -152,50 +131,43 @@ Additional analytical features were created during the project, including:
 ## Project Workflow
 
 ```text
-Raw Data
-    ↓
-Data Cleaning & Validation
-    ↓
-Feature Engineering
-    ↓
-SQL Business Analysis
-    ↓
-Exploratory Data Analysis
-    ↓
-Power BI Dashboard
-    ↓
-Statistical Analysis
-    ↓
-Hypothesis Testing
-    ↓
-Business Findings
-    ↓
-Business Recommendations
+├── Data/
+│   ├── Processed/
+│   └── External/
+├── Reports/
+│   ├── anomaly_detection_results.csv
+│   ├── flagged_anomalies.csv
+│   └── profit_leakage_investigation_summary.csv
+├── Python/
+├── SQL/
+├── PowerBI/
+├── Screenshots/
+├── src/
+│   ├── data_processing.py
+│   └── analytics.py
+├── ml/
+│   └── anomaly_detection.py
+├── api/
+│   └── main.py
+├── ai_assistant/
+│   └── assistant.py
+├── app.py
+├── README.md
 ```
 ## Tools & Technologies
-Tool	        Purpose
-Python	        Data cleaning, EDA, and statistical analysis
-Pandas	        Data manipulation
-NumPy	        Numerical analysis
-SciPy	        Statistical testing
-Statsmodels 	ANOVA and post-hoc analysis
-Matplotlib	    Statistical visualizations
-Seaborn	        Exploratory visualizations
-SQL	            Business queries and aggregations
-Power BI	    Interactive dashboards and reporting
-GitHub	        Version control and project presentation
 
-## Statistical Methods Used
-### Method	                  Purpose
-Descriptive Statistics	   Understand distributions and central tendency
-IQR Outlier Detection	   Identify unusual observations
-Pearson Correlation	       Measure linear association
-Spearman Correlation	   Measure monotonic association
-One-Way ANOVA	           Test differences across discount groups
-Welch's ANOVA	           Robust test when equal variance is questionable
-Tukey HSD	               Identify specific group differences
-Kruskal-Wallis	           Non-parametric validation
-Eta Squared	               Measure effect size
+| Technology | Purpose |
+|---|---|
+| Python | Data processing and analysis |
+| Pandas and NumPy | Data manipulation and numerical analysis |
+| SciPy and Statsmodels | Statistical testing |
+| Scikit-learn | Isolation Forest anomaly detection |
+| SQL | Business queries and aggregations |
+| Power BI | Interactive business intelligence dashboards |
+| Streamlit and Plotly | Interactive analytics application |
+| FastAPI and Uvicorn | Analytics API |
+| Git and GitHub | Version control and project presentation |
+
 
 ## Key Statistical Results
 ### Analysis	                    Result
@@ -366,33 +338,6 @@ Therefore, the results should be used to identify areas for investigation and de
 
 ---
 
-## Project Structure
-
-```text
-retail-profit-leakage-analysis/
-│
-├── Data/
-│   ├── Processed/
-│   └── External/
-│
-├── Python/
-│   ├── 01_Data_Cleaning.py
-│   ├── 02_EDA.py
-│   ├── 03_Feature_Engineering.py
-│   ├── 04_Final_Data_Integration.py
-│   └── 05_Statistical_Analysis.ipynb
-│
-├── SQL/
-│   └── SQL_Analysis.sql
-│
-├── PowerBI/
-│   └── Retail_Profit_Leakage_Dashboard.pbix
-│
-├── Dashboard_Screenshots/
-│
-├── README.md
-└── LICENSE
-```
 ## Future Improvements
 
 Potential future development includes:
@@ -410,27 +355,6 @@ Potential future development includes:
 These extensions could turn the analytical framework into a more automated profitability monitoring system.
 
 ---
-
-## Conclusion
-
-This project demonstrates how retail transaction data can be transformed into actionable profitability intelligence.
-
-The analysis identifies a strong negative association between discounting and profit margin, statistically significant differences in profitability across discount bands, and a substantial concentration of loss-making transactions among high-discount orders.
-
-
-# Retail Profit Leakage & Performance Analysis
-
-A retail analytics project that combines business performance analysis, machine learning-based anomaly detection, and interactive dashboards to identify potential profit leakage.
-
-## Features
-
-- **Retail Analytics:** Analyze sales, profit, discounts, categories, regions, and monthly trends.
-- **Anomaly Detection:** Use Isolation Forest to identify unusual retail transactions.
-- **Profit Leakage Investigation:** Flag negative-profit transactions, high discounts, and high shipping costs.
-- **Interactive Dashboard:** Explore KPIs, charts, and flagged transactions using Streamlit.
-- **FastAPI Backend:** Provide analytics through REST API endpoints.
-- **Retail Analytics Assistant:** Ask supported questions about business metrics, regional performance, anomalies, and individual orders.
-
 ## Tech Stack
 
 Python, Pandas, Scikit-learn, Streamlit, Plotly, FastAPI, Uvicorn, SQL, Power BI.
@@ -467,29 +391,6 @@ Configuration: 200 estimators, contamination of 0.03, random state 42.
 | High-shipping-cost flags | 312 |
 
 Flag categories can overlap. An anomaly indicates a transaction requiring investigation, not necessarily fraud or a confirmed loss.
-
-## Project Structure
-
-```text
-Retail_Profit_Leakage_Project/
-├── Data/
-│   └── Processed/
-├── Reports/
-│   ├── anomaly_detection_results.csv
-│   ├── flagged_anomalies.csv
-│   └── profit_leakage_investigation_summary.csv
-├── src/
-│   ├── data_processing.py
-│   └── analytics.py
-├── ml/
-│   └── anomaly_detection.py
-├── api/
-│   └── main.py
-├── ai_assistant/
-│   └── assistant.py
-├── app.py
-└── README.md
-```
 
 ## Run the Project
 
