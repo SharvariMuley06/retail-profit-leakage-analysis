@@ -417,23 +417,110 @@ This project demonstrates how retail transaction data can be transformed into ac
 
 The analysis identifies a strong negative association between discounting and profit margin, statistically significant differences in profitability across discount bands, and a substantial concentration of loss-making transactions among high-discount orders.
 
-The final solution combines:
 
-**Python + SQL + Statistics + Power BI**
+# Retail Profit Leakage & Performance Analysis
 
-to move from:
+A retail analytics project that combines business performance analysis, machine learning-based anomaly detection, and interactive dashboards to identify potential profit leakage.
 
-**Raw Data → Analysis → Statistical Validation → Visualization → Business Decision**
+## Features
 
----
+- **Retail Analytics:** Analyze sales, profit, discounts, categories, regions, and monthly trends.
+- **Anomaly Detection:** Use Isolation Forest to identify unusual retail transactions.
+- **Profit Leakage Investigation:** Flag negative-profit transactions, high discounts, and high shipping costs.
+- **Interactive Dashboard:** Explore KPIs, charts, and flagged transactions using Streamlit.
+- **FastAPI Backend:** Provide analytics through REST API endpoints.
+- **Retail Analytics Assistant:** Ask supported questions about business metrics, regional performance, anomalies, and individual orders.
+
+## Tech Stack
+
+Python, Pandas, Scikit-learn, Streamlit, Plotly, FastAPI, Uvicorn, SQL, Power BI.
+
+## Dataset
+
+- **Records:** 51,290
+- **Columns:** 49
+- **File:** `Data/Processed/final_retail_dataset.csv`
+
+The dataset contains order, customer, product, sales, profit, discount, shipping, and regional information.
+
+## Machine Learning
+
+The project uses **Isolation Forest**, an unsupervised machine learning algorithm, to identify unusual transaction patterns.
+
+Features used:
+- Sales
+- Profit
+- Discount
+- Quantity
+- Shipping cost
+
+Configuration: 200 estimators, contamination of 0.03, random state 42.
+
+## Results
+
+| Metric | Result |
+|---|---:|
+| Transactions analyzed | 51,290 |
+| Anomaly records flagged | 1,539 |
+| Negative-profit anomaly flags | 544 |
+| High-discount flags | 420 |
+| High-shipping-cost flags | 312 |
+
+Flag categories can overlap. An anomaly indicates a transaction requiring investigation, not necessarily fraud or a confirmed loss.
+
+## Project Structure
+
+```text
+Retail_Profit_Leakage_Project/
+├── Data/
+│   └── Processed/
+├── Reports/
+│   ├── anomaly_detection_results.csv
+│   ├── flagged_anomalies.csv
+│   └── profit_leakage_investigation_summary.csv
+├── src/
+│   ├── data_processing.py
+│   └── analytics.py
+├── ml/
+│   └── anomaly_detection.py
+├── api/
+│   └── main.py
+├── ai_assistant/
+│   └── assistant.py
+├── app.py
+└── README.md
+```
+
+## Run the Project
+
+Install the required packages:
+
+```bash
+python -m pip install pandas numpy scikit-learn streamlit plotly fastapi uvicorn requests tabulate
+```
+
+Start the API from the project root:
+
+```bash
+python -m uvicorn api.main:app --reload
+```
+
+Start the dashboard in a second terminal:
+
+```bash
+python -m streamlit run app.py
+```
+
+API documentation: `http://127.0.0.1:8000/docs`
+
+
 
 ## Author
 
 **Sharvari Muley**
 
-Data Analytics | Business Intelligence | Python | SQL | Power BI | Statistics
+ Python | Pandas | NumPy | SQL | Scikit-learn | Machine Learning | Streamlit | FastAPI | Plotly | Power BI | Git & GitHub
 
----
 
 ## Copyright & Usage
 

@@ -49,7 +49,8 @@ def performance_by_category(df: pd.DataFrame) -> pd.DataFrame:
             total_sales=("sales", "sum"),
             total_profit=("profit", "sum"),
             order_records=(
-                "order_id" if "order_id" in df.columns else "sales", "count"
+                "order_id" if "order_id" in df.columns else "sales",
+                "count",
             ),
         )
         .reset_index()
@@ -132,7 +133,9 @@ def discount_analysis(df: pd.DataFrame) -> pd.DataFrame:
             working[column], errors="coerce"
         )
 
-    working = working.dropna(subset=["discount", "sales", "profit"])
+    working = working.dropna(
+        subset=["discount", "sales", "profit"]
+    )
 
     # Normalize floating-point values before grouping.
     working["discount"] = working["discount"].round(2)
@@ -154,7 +157,10 @@ def discount_analysis(df: pd.DataFrame) -> pd.DataFrame:
 if __name__ == "__main__":
     project_root = Path(__file__).resolve().parent.parent
     dataset_path = (
-        project_root / "Data" / "Processed" / "final_retail_dataset.csv"
+        project_root
+        / "Data"
+        / "Processed"
+        / "final_retail_dataset.csv"
     )
 
     df = load_csv(dataset_path)

@@ -106,9 +106,8 @@ def build_investigation_report(
 
     # Positive amount representing the magnitude of negative profit.
     flagged["negative_profit_amount"] = (
-        -flagged["profit"].clip(upper=0)
-    )
-
+    (-flagged["profit"].clip(upper=0)).clip(lower=0)
+)
     categories = [
         ("Negative profit", "negative_profit_flag"),
         ("High discount", "high_discount_flag"),
