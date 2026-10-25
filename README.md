@@ -183,16 +183,15 @@ Share of Loss-Making Transactions	76.36%
 
 These results indicate a strong negative association between discount and profit margin and statistically significant differences in profitability across discount bands.
 
-## Power BI Dashboard
-
 ### Main Dashboard
 <img width="1136" height="650" alt="image" src="https://github.com/user-attachments/assets/fb0f7dbd-33e5-442a-8e7a-e298b52a69fe" />
+
+The Power BI solution converts the analytical results into interactive business dashboards.
 
 ### AI_assistant
 <img width="1916" height="713" alt="ai_assistant" src="https://github.com/user-attachments/assets/bbc8a924-9078-4768-83c8-69451a6954e0" />
 
-
-The Power BI solution converts the analytical results into interactive business dashboards.
+Ask questions about sales, profitability, regional performance, anomalies, and individual orders using the interactive analytics assistant.
 
 ### Geographic Analysis
 
